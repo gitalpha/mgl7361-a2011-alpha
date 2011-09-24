@@ -1,0 +1,12 @@
+apply plugin: 'java'
+repositories {
+  mavenCentral()
+}
+dependencies {
+  testCompile 'junit:junit:4.9'
+}
+task(run, dependsOn:'classes', type:JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'TUnit.assertion.Assertion'
+}
+defaultTasks 'build'
